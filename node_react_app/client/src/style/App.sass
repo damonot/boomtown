@@ -1,0 +1,72 @@
+$textgray: #747474
+$focus: #afafafbf
+$outline: rgba(255, 255, 255, .25)
+
+    
+*
+    margin: 0
+
+@mixin transition($duration)
+    -webkit-transition: $duration
+    -moz-transition: $duration
+    -ms-transition: $duration
+    -o-transition: $duration
+    transition: $duration
+
+.App
+  text-align: center
+  min-height: 100vh
+  
+.content
+    display: flex
+    flex-direction: column
+    font-size: calc(10px + 2vmin)
+    color: white
+    .push-down
+        margin-top: 30vh
+
+    height: fit-content
+
+.container > * 
+    margin: .5rem 2rem .5rem 2rem
+.container
+    justify-content: center
+    align-items: center
+
+h1
+    font-size: 2.25rem  
+h2
+    font-size: 1rem
+    opacity: calc(0.75)
+
+.search
+    align-items: center
+    display: flex
+input
+    height: 3rem
+    min-width: 50%
+    max-width: 80%
+    margin-right: 0 !important
+    border: none
+    border-radius: 25px 
+    border-radius: 25px
+    text-align: center
+    font-size: 1.5rem
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace
+    color: $textgray
+    outline: 3px solid $outline
+    @include transition(.5s)
+input:focus
+    outline: 3px solid $focus
+button
+    border: none
+    height: 3rem
+    width: 4rem
+    margin-left: 0 !important
+    text-align: center
+    background-color: transparent
+    @include transition(.5s)
+button:hover
+    filter: invert(.125)
+    cursor: pointer
+
