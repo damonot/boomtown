@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import Members from "./Members"
 import verified from '../static/verified.png'
 import unverified from '../static/unverified.png'
 import moment from 'moment'
@@ -49,36 +50,40 @@ const GitAPI = ({props}) => {
 
     if(valid) {
         return(
-            <section className="container org">
-                <div className="flex align">
-                    <a href={html_url}><img src={avatar_url}></img></a>
-                    <h2><a href={html_url}>{name}</a></h2>
-                    {is_verified ? 
-                        <img className="verify safe" src={verified} alt="verified" title="Verifed"></img> 
-                        : <img className="verify danger" src={unverified} alt="unverified" title="Unverifed"></img>}
-                </div>
-                <div className="flex wrap push-up">
-                    <h3 title="ID">#{id}</h3>
+            <div>
+                <section className="container org">
+                    <div className="flex align highlight mx">
+                        <a href={html_url}><img src={avatar_url}></img></a>
+                        <h2><a href={html_url}>{name}</a></h2>
+                        {is_verified ? 
+                            <img className="verify safe" src={verified} alt="verified" title="Verifed"></img> 
+                            : <img className="verify danger" src={unverified} alt="unverified" title="Unverifed"></img>}
+                    </div>
+                    <div className="flex wrap">
+                        <h4 title="ID">#{id}</h4>
 
-                    {/* Has Updated? */}
-                    { created_at < updated_at ? 
-                        <div className="flex wrap">
-                            <h3 className="highlight">Modified: {friendlyUpdate}</h3>
-                            <h3>Made: {friendlyCreate}</h3>
-                        </div>
-                        : <div className="flex wrap">
-                            <h3>Modified: {friendlyUpdate}</h3>
-                            <h3 className="highlight">Made: {friendlyCreate}</h3>
-                        </div>
-                    }
-                </div>
-            </section>
+                        {/* Has Updated? */}
+                        { created_at < updated_at ? 
+                            <div className="flex wrap">
+                                <h4 className="highlight">Modified: {friendlyUpdate}</h4>
+                                <h4>Made: {friendlyCreate}</h4>
+                            </div>
+                            : <div className="flex wrap">
+                                <h4>Modified: {friendlyUpdate}</h4>
+                                <h4 className="highlight">Made: {friendlyCreate}</h4>
+                            </div>
+                        }
+                    </div>
+                </section>
+                <Members/>
+            </div>
+
         )
     } else {
         return(
             <div>
                 <h1>We couldn't find that org :/</h1>
-                <h3>(note: you may have reached the Github API request limit)</h3>
+                <h4>(note: you may have reached the Github API request limit)</h4>
             </div>
         )
     }

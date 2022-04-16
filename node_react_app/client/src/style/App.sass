@@ -2,7 +2,7 @@ $textgray: #747474
 $focus: rgba(255, 255, 255, 0.658)
 $outline: rgba(255, 255, 255, .25)
 $danger: rgba(182, 40, 40, 0.932)
-$safe: rgba(40, 182, 111,1)
+$safe: #4cc98a
 
     
 *
@@ -11,13 +11,16 @@ $safe: rgba(40, 182, 111,1)
 .flex
     display: flex
     justify-content: center
-
+    
 .wrap
     flex-wrap: wrap        
 
-
 .align
     align-items: center
+
+.mx
+    margin-left: auto
+    margin-right: auto
 
 .safe
     background-color: $safe
@@ -26,8 +29,9 @@ $safe: rgba(40, 182, 111,1)
     background-color: $danger
     border: 3px solid $danger !important
 .highlight
-    background-color: $focus
-    color: $textgray
+    background-color: $outline
+    color: white
+    text-shadow: 1px 1px 2px $textgray
     border-radius: 25px
 
 @mixin transition($duration)
@@ -38,24 +42,23 @@ $safe: rgba(40, 182, 111,1)
     transition: $duration
 
 h1
-    font-size: 2.25rem
+    font-size: 3rem
 h2
-    font-size: 1.5rem
-    margin-bottom: .5rem
-    border-bottom: 1px solid $focus
+    font-size: 2rem
 h3
-    font-size: 1rem
+    font-size: 1.5rem
+h4
+    font-size: 1.25rem
     opacity: calc(0.75)
     width: fit-content
     padding-left: .55rem
     padding-right: .55rem
-    margin-top: -.75rem
 a
     color: white
     text-decoration: none
     @include transition(.25s)
 a:hover
-    text-shadow: 2px 2px $outline
+    text-shadow: 2px 2px 2px $textgray
 
 .App
   text-align: center
@@ -114,7 +117,6 @@ button:hover
 .org
     width: 80%
     margin: auto
-    margin-top: -.5rem
     border-bottom: 3px white double
 
     div
@@ -128,17 +130,15 @@ button:hover
         margin: .5rem
         border-radius: 30%
         border: .25rem solid $outline
+        vertical-align: middle
 
-    h3
+    h4
         margin: 0px 5px 5px 5px
         text-transform: capitalize
 
     .verify
         width: 1.5rem
         border-radius: 50%
-    
-    .push-up
-        margin-top: -.75rem
 
 
 
