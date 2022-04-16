@@ -17,7 +17,6 @@ const SearchBar = () => {
                 <input onChange={handleChange} placeholder='Try "boomtownroi"'></input>
                 <button onClick={handleClick}><img alt="Search" src={Search}></img></button>
         </div>
-        
     )
 }
 
