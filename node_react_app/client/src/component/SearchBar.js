@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Search from '../static/search.svg'
 
 const SearchBar = ({registerInput}) => {  
-    const [textInput, setTextInput] = React.useState('');
+    const [textInput, setTextInput] = useState('');
   
     const handleChange = (event) => {
       setTextInput(event.target.value);
