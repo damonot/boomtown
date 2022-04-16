@@ -2,11 +2,12 @@
 import { useState } from 'react';
 import Greeting from './component/Greeting';
 import SearchBar from './component/SearchBar';
+import GitAPI from './component/GitAPI'
 import './style/App.sass';
 
 function App() {
 
-  const[textInput, setTextInput] = useState('');
+  const[textInput, setTextInput] = useState('boomtownroi');
   const registerInput = textInput => {
     setTextInput(textInput);
   }
@@ -16,7 +17,7 @@ function App() {
       <header className="content px">
         <Greeting/>  
         <SearchBar registerInput={registerInput}/>
-        <p>{textInput}</p>
+        <GitAPI props={textInput}/>
       </header>
     </div>
   );
