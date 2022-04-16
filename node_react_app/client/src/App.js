@@ -6,19 +6,17 @@ import './style/App.sass';
 
 function App() {
 
-  const[name, setName] = useState('default');
-
-  function changeName(name){
-    console.log(name)
-    setName(name);
+  const[textInput, setTextInput] = useState('');
+  const registerInput = textInput => {
+    setTextInput(textInput);
   }
 
   return (
     <div className="App">
       <header className="content px">
         <Greeting/>  
-        <SearchBar changeName={changeName}/>
-        <p>{name}</p>
+        <SearchBar registerInput={registerInput}/>
+        <p>{textInput}</p>
       </header>
     </div>
   );
