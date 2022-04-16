@@ -1,11 +1,21 @@
 import React, { useState } from 'react';
 import Search from '../static/search.svg'
-function SearchBar(){
-    return(
-        <div class="container search">
-                <input placeholder='Try "boomtownroi"'></input>
-                <button><img alt="Search" src={Search}></img></button>
 
+const SearchBar = () => {  
+    const [textInput, setTextInput] = React.useState('');
+  
+    const handleClick = () => {
+      console.log(textInput);
+    }
+  
+    const handleChange = (event) => {
+      setTextInput(event.target.value);
+    }
+
+    return(
+        <div className="container search">
+                <input onChange={handleChange} placeholder='Try "boomtownroi"'></input>
+                <button onClick={handleClick}><img alt="Search" src={Search}></img></button>
         </div>
         
     )
