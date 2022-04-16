@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Search from '../static/search.svg'
 
-const SearchBar = () => {  
+const SearchBar = ({changeName}) => {  
     const [textInput, setTextInput] = React.useState('');
   
     const handleClick = () => {
@@ -15,7 +15,7 @@ const SearchBar = () => {
     return(
         <div className="container search">
                 <input onChange={handleChange} placeholder='Try "boomtownroi"'></input>
-                <button onClick={handleClick}><img alt="Search" src={Search}></img></button>
+                <button onClick={() => changeName(textInput)}><img alt="Search" src={Search}></img></button>
         </div>
     )
 }
