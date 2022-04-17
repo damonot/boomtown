@@ -10,21 +10,21 @@ const Issues = ({props}) => {
     let friendlyUpdate;
     let friendlyPush;
 
-    // useEffect(() => {
-    //     fetch(URL)
-    //     .then(res => res.json())
-    //     .then(json => {
-    //         if(json[0] !== undefined && json.hasOwnProperty('id')) {
-    //             setValidity(true);
-    //             handleData(json);
-    //         } else setValidity(false);
-    //     })
-    //     .catch(err => console.log(err));
-    // });
+    useEffect(() => {
+        fetch(URL)
+        .then(res => res.json())
+        .then(json => {
+            if(json !== undefined && json.hasOwnProperty('id')) {
+                setValidity(true);
+                handleData(json);
+            } else setValidity(false);
+        })
+        .catch(err => console.log(err));
+    });
 
-    // const handleData = (json) => {
-    //     setData(json)
-    // }
+    const handleData = (json) => {
+        setData(json)
+    }
 
     if(valid) {
         return(
@@ -45,7 +45,7 @@ const Issues = ({props}) => {
                         </thead>
                         <tbody>
                             {
-                                issues.map(i => {
+                                data.map(i => {
                                     return (
                                         <tr key={i.id}>
                                             <td data-label="ID">{i.id}</td>
