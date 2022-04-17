@@ -28,7 +28,7 @@ const Repos = ({props}) => {
 
     if(valid) {
         return(
-            <div className="repos" id="repos">
+            <div className="shrink" id="repos">
                 <div className="mx flex wrap box">
                     <h3 className="stretch">Repositorites</h3>
                     <div className="scrollable-wrapper">

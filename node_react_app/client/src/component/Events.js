@@ -26,7 +26,7 @@ const Events = ({props}) => {
 
     if(valid) {
         return(
-            <div className="events" id="events">
+            <div className="shrink" id="events">
                 {/* <h2 className=" allcaps"style={{textAlign:"center"}}>repos</h2> */}
                 <div className="mx flex wrap box">
                     <h3 className="stretch">Events</h3>
