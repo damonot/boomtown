@@ -9,18 +9,19 @@ const Repos = ({props}) => {
     let friendlyCreate;
     let friendlyUpdate;
 
-    // useEffect(() => {
-    //     fetch(URL)
-    //     .then(res => res.json())
-    //     .then(json => {
-    //         handleData(json);
-    //     })
-    //     .catch(err => console.log(err));
-    // });
+    useEffect(() => {
+        fetch(URL)
+        .then(res => res.json())
+        .then(json => {
+            console.log(json);
+            handleData(json);
+        })
+        .catch(err => console.log(err));
+    });
 
-    // const handleData = (json) => {
-    //     setData(json)
-    // }
+    const handleData = (json) => {
+        setData(json)
+    }
 
     return(
         <div className="repos" id="repos">
@@ -40,7 +41,7 @@ const Repos = ({props}) => {
                     </thead>
                     <tbody>
                         {
-                            repos.map(i => {
+                            data.map(i => {
                                 friendlyCreate = moment(i.created_at).fromNow();
                                 friendlyUpdate = moment(i.updated_at).fromNow();
                                 return (
@@ -55,7 +56,6 @@ const Repos = ({props}) => {
                                 )
                             })
                         }
-
                     </tbody>
                 </table>
                 </div>

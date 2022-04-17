@@ -79,7 +79,7 @@ const GitAPI = ({props}) => {
                     </div>
                 </section>
                 {/* <Members props={URL}/> */}
-                <Repos/>
+                <Repos props={URL}/>
             </div>
 
         )
