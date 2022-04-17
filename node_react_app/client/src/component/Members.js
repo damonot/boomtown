@@ -16,22 +16,18 @@ const Members = ({props}) => {
         .catch(err => console.log(err));
     });
 
-    const handleData = (
-        json) => {
-            setData(json)
-
+    const handleData = (json) => {
+        setData(json)
     }
-
 
     return(
         <div className="members" id="members">
             {/* <h2 className="highlight allcaps"style={{textAlign:"center"}}>Members</h2> */}
             <div className="mx flex wrap">
             {
-                // to be replace with  data.map(props)
-                data.map(props => {
+                data.map(i => {
                     return (
-                        <Member props={props} key={props.id}/>
+                        <Member props={i} key={i.id}/>
                     )
                 })
             }
