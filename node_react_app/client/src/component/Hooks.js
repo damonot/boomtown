@@ -29,7 +29,7 @@ const Hooks = ({props}) => {
 
     if(valid) {
         return(
-            <div className="hooks shrink" id="hooks">
+            <div className="shrink" id="hooks">
                 <div className="mx flex wrap box">
                     <h3 className="stretch">Hooks</h3>
                     <div className="scrollable-wrapper">
@@ -46,7 +46,7 @@ const Hooks = ({props}) => {
                         </thead>
                         <tbody>
                             {
-                                hooks.map(i => {
+                                data.map(i => {
                                     friendlyCreate = moment(i.created_at).fromNow();
                                     friendlyUpdate = moment(i.updated_at).fromNow();
                                     friendlyPush = moment(i.pushed_at).fromNow();
