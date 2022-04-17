@@ -3,7 +3,7 @@ import issues from "../development/issues";
 
 const Issues = ({props}) => {
     const [data, setData] = useState([])
-    const [valid, setValidity] = useState(true)
+    const [valid, setValidity] = useState()
     const URL = props+"/issues"
 
     useEffect(() => {
