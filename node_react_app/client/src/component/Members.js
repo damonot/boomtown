@@ -4,15 +4,24 @@ import Member from "./Member"
 
 
 const Members = ({props}) => {
+    const [data, setData] = useState([])
     const URL = props+"/members"
-    const [data, setData] = useState();
 
-    // useEffect(() => {
-    //     fetch(URL)
-    //     .then(res => res.json())
-    //     .then(data => setData(data))
-    //     .catch(err => console.log(err));
-    // });
+    useEffect(() => {
+        fetch(URL)
+        .then(res => res.json())
+        .then(json => {
+            handleData(json);
+        })
+        .catch(err => console.log(err));
+    });
+
+    const handleData = (
+        json) => {
+            setData(json)
+
+    }
+
 
     return(
         <div className="members" id="members">
@@ -20,9 +29,9 @@ const Members = ({props}) => {
             <div className="mx flex wrap">
             {
                 // to be replace with  data.map(props)
-                members.map(member => {
+                data.map(props => {
                     return (
-                        <Member props={member} key={member.id}/>
+                        <Member props={props} key={props.id}/>
                     )
                 })
             }

@@ -6,31 +6,31 @@ import moment from 'moment'
 const API = 'https://api.github.com/orgs/'
 
 const GitAPI = ({props}) => {
-    const [valid, setValidity] = useState(true);
-    const [id, setId] = useState (6969696);
-    const [name, setName] = useState ('Amazon Web Services');
-    const [html_url, setHtml_url] = useState ('https://github.com/aws');
-    const [avatar_url, setAvatar_url] = useState ('https://avatars.githubusercontent.com/u/2232217?v=4');
-    const [is_verified, setIs_verified] = useState (true);
-    const [created_at, setCreated_at] = useState ('2012-08-28T05:37:55Z');
-    const [updated_at, setUpdated_at] = useState ('2022-03-18T18:37:08Z');
+    const [valid, setValidity] = useState();
+    const [id, setId] = useState ();
+    const [name, setName] = useState ();
+    const [html_url, setHtml_url] = useState ();
+    const [avatar_url, setAvatar_url] = useState ();
+    const [is_verified, setIs_verified] = useState ();
+    const [created_at, setCreated_at] = useState ();
+    const [updated_at, setUpdated_at] = useState ();
     const friendlyCreate = moment(created_at).fromNow();
     const friendlyUpdate = moment(updated_at).fromNow();
     const URL = API+props;
 
-    // useEffect(() => {
-    //     console.log("Requested "+ props )
-    //     fetch(URL)
-    //         .then(res => res.json())
-    //         .then(data => {
-    //             if(data.hasOwnProperty('id')) {
-    //                 setValidity(true)
-    //                 setData(data)
-    //             } else setValidity(false)
-    //         }).catch(err => {
-    //             console.log(err);
-    //         });
-    // });
+    useEffect(() => {
+        console.log("Requested "+ props )
+        fetch(URL)
+            .then(res => res.json())
+            .then(data => {
+                if(data.hasOwnProperty('id')) {
+                    setValidity(true)
+                    setData(data)
+                } else setValidity(false)
+            }).catch(err => {
+                console.log(err);
+            });
+    });
 
     const setData = ({
         id,
