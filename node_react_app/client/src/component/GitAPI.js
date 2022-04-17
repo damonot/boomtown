@@ -16,11 +16,11 @@ const GitAPI = ({props}) => {
     const [updated_at, setUpdated_at] = useState ('2022-03-18T18:37:08Z');
     const friendlyCreate = moment(created_at).fromNow();
     const friendlyUpdate = moment(updated_at).fromNow();
-    const url = API+props;
+    const URL = API+props;
 
     // useEffect(() => {
     //     console.log("Requested "+ props )
-    //     fetch(url)
+    //     fetch(URL)
     //         .then(res => res.json())
     //         .then(data => {
     //             if(data.hasOwnProperty('id')) {
@@ -75,7 +75,7 @@ const GitAPI = ({props}) => {
                         }
                     </div>
                 </section>
-                <Members/>
+                <Members props={URL}/>
             </div>
 
         )

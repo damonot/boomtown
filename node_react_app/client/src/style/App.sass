@@ -1,6 +1,7 @@
 $textgray: #747474
 $focus: rgba(255, 255, 255, 0.658)
 $outline: rgba(255, 255, 255, .25)
+$blue: #5691c2d3
 $danger: rgba(182, 40, 40, 0.932)
 $safe: #4cc98a
 
@@ -24,15 +25,18 @@ $safe: #4cc98a
 
 .safe
     background-color: $safe
-    border: 3px solid $safe !important
 .danger
     background-color: $danger
-    border: 3px solid $danger !important
+.blue
+    background: $blue
+
 .highlight
     background-color: $outline
     color: white
-    text-shadow: 1px 1px 2px $textgray
+    text-shadow: 1px 1px 2px $blue
     border-radius: 25px
+.allcaps
+    text-transform: uppercase
 
 @mixin transition($duration)
     -webkit-transition: $duration
@@ -44,7 +48,7 @@ $safe: #4cc98a
 h1
     font-size: 3rem
 h2
-    font-size: 2rem
+    font-size: 2.25rem
 h3
     font-size: 1.5rem
 h4
@@ -53,12 +57,13 @@ h4
     width: fit-content
     padding-left: .55rem
     padding-right: .55rem
+    margin: auto
 a
     color: white
     text-decoration: none
     @include transition(.25s)
 a:hover
-    text-shadow: 2px 2px 2px $textgray
+    text-shadow: 4px 4px 4px $blue
 
 .App
   text-align: center
@@ -117,11 +122,14 @@ button:hover
 .org
     width: 80%
     margin: auto
+    padding-bottom: .5rem
     border-bottom: 3px white double
 
     div
         margin-left: .5rem
         margin-right: .5rem
+        padding-left: 1rem
+        padding-right: 1rem
 
     img
         width: 2.5rem
@@ -139,6 +147,44 @@ button:hover
     .verify
         width: 1.5rem
         border-radius: 50%
+.members
+    margin: auto
+    padding-left: 5%
+    padding-right: 5%
+    h2
+        max-width: 50%
+        margin: 1.5rem auto .5rem auto
+        padding: 0rem 1rem 0 1rem
+.member
+    // outline: 1px solid red
+    width: fit-content
+    background: $outline
+    border: .25rem solid $outline
+    margin: 1rem
+    border-radius: 5px
+    padding: 2rem 2.5rem 2.5rem 2.5rem
+    @include transition(.5s)
+    
+    > *
+        margin-top: .25rem
+
+    img
+        width: 10rem
+        border-radius: 50%
+        outline: .5rem solid $outline
+
+    a
+        font-size: 1.5rem
+
+    .bubble
+        margin: .5rem
+        padding: .5rem
+        border-radius: 25px
+        font-size: 1.25rem
+        border: 3px solid $outline
+
+
+
 
 
 
