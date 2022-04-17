@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import members from "../development/members"
 import Member from "./Member"
 
 
