@@ -60,7 +60,7 @@ const GitAPI = ({props}) => {
             <div>
                 <section className="container org">
                     <div className="flex align highlight mx">
-                        <a href={html_url}><img src={avatar_url}></img></a>
+                        <a href={html_url}><img src={avatar_url} alt="No Image Found"></img></a>
                         <h2><a href={html_url}>{name}</a></h2>
                         {is_verified ? 
                             <img className="verify safe" src={verified} alt="verified" title="Verifed"></img> 
