@@ -5,7 +5,7 @@ import hooks from "../development/hooks";
 const Hooks = ({props}) => {
     const [data, setData] = useState([])
     const [valid, setValidity] = useState()
-    const URL = props+"/repos"
+    const URL = props+"/hooks"
     let friendlyCreate;
     let friendlyUpdate;
     let friendlyPush;
