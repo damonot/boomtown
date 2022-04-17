@@ -11,18 +11,13 @@ const Events = ({props}) => {
         fetch(URL)
         .then(res => res.json())
         .then(json => {
-            // console.log(json[0]);
             if(json[0] !== undefined && json[0].hasOwnProperty('id')) {
                 setValidity(true);
-                handleData(json);
+                setData(json);
             } else setValidity(false);
         })
         .catch(err => console.log(err));
     });
-
-    const handleData = (json) => {
-        setData(json)
-    }
 
     if(valid) {
         return(

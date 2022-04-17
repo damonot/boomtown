@@ -16,15 +16,11 @@ const Hooks = ({props}) => {
             // console.log(json[0]);
             if(json !== undefined && json[0].hasOwnProperty('id')) {
                 setValidity(true);
-                handleData(json);
+                setData(json);
             } else setValidity(false);
         })
         .catch(err => console.log(err));
     });
-
-    const handleData = (json) => {
-        setData(json)
-    }
 
     if(valid) {
         return(

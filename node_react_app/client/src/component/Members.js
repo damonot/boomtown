@@ -10,15 +10,11 @@ const Members = ({props}) => {
         fetch(URL)
         .then(res => res.json())
         .then(json => {
-            handleData(json);
+            setData(json);
         })
         .catch(err => console.log(err));
     });
-
-    const handleData = (json) => {
-        setData(json)
-    }
-
+    
     return(
         <div className="members" id="members">
             <div className="mx flex wrap">
