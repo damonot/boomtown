@@ -8,6 +8,7 @@ $safe: #4cc98a
     
 *
     margin: 0
+    user-select: none
 
 .flex
     display: flex
@@ -102,6 +103,7 @@ input
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace
     color: $textgray
     @include transition(.5s)
+    user-select: auto
 input:focus,input:hover
     outline: 3px solid $focus
 button
