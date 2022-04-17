@@ -13,8 +13,8 @@ const Repos = ({props}) => {
         fetch(URL)
         .then(res => res.json())
         .then(json => {
-            console.log(json[0]);
-            if(json[0].hasOwnProperty('id')) {
+            // console.log(json[0]);
+            if(json[0] !== undefined && json[0].hasOwnProperty('id')) {
                 setValidity(true);
                 handleData(json);
             } else setValidity(false);
@@ -29,7 +29,6 @@ const Repos = ({props}) => {
     if(valid) {
         return(
             <div className="repos" id="repos">
-                {/* <h2 className=" allcaps"style={{textAlign:"center"}}>repos</h2> */}
                 <div className="mx flex wrap box">
                     <h3 className="stretch">Repositorites</h3>
                     <div className="scrollable-wrapper">

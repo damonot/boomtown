@@ -12,7 +12,7 @@ const Events = ({props}) => {
         .then(res => res.json())
         .then(json => {
             // console.log(json[0]);
-            if(json !== undefined && json[0].hasOwnProperty('id')) {
+            if(json[0] !== undefined && json[0].hasOwnProperty('id')) {
                 setValidity(true);
                 handleData(json);
             } else setValidity(false);
