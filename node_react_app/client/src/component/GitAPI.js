@@ -36,12 +36,14 @@ const GitAPI = ({props}) => {
         id,
         name,
         html_url,
+        avatar_url,
         is_verified,
         created_at,
         updated_at}) => {
         setId(id);
         setName(name);
         setHtml_url(html_url);
+        setAvatar_url(avatar_url);
         setIs_verified(is_verified);
         setCreated_at(created_at);
         setUpdated_at(updated_at);
@@ -75,7 +77,7 @@ const GitAPI = ({props}) => {
                         }
                     </div>
                 </section>
-                <Members props={URL}/>
+                {/* <Members props={URL}/> */}
             </div>
 
         )
