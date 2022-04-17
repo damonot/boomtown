@@ -26,12 +26,12 @@ const Repos = ({props}) => {
         setData(json)
     }
 
-    if(!valid) {
+    if(valid) {
         return(
             <div className="repos" id="repos">
                 {/* <h2 className=" allcaps"style={{textAlign:"center"}}>repos</h2> */}
-                <div className="mx flex wrap">
-                    
+                <div className="mx flex wrap box">
+                    <h3 className="stretch">Repositorites</h3>
                     <div className="scrollable-wrapper">
                     <table className="table">
                         <thead>
@@ -73,7 +73,7 @@ const Repos = ({props}) => {
         )
     } else {
         return (
-            <div className="box mx">
+            <div className="box mx fitcontent">
                 <h3>Repositorites</h3>
                 <p>none found :(</p>
             </div>
