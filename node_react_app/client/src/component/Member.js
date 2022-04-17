@@ -1,7 +1,6 @@
 import {useState} from "react";
 
 const Member = ({props}) => {
-    console.log(props.site_admin)
 
     return(
         <div className="member">
