@@ -121,6 +121,51 @@ button:hover
     cursor: pointer
     outline: 3px solid $focus
 
+
+.repos
+    width: 80%
+    margin: auto
+
+.scrollable-wrapper
+  max-height: 45vh
+  overflow-y: scroll
+
+/* Add also the following code if sticky header is wanted */
+.scrollable-wrapper table thead th
+  position: sticky
+  top: 0
+  box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.791)
+
+.table 
+    width: 80rem
+
+    border-collapse: collapse 
+    th 
+        background-color: white
+        color: $blue
+        border: none
+    tbody 
+        tr 
+            &:nth-child(even) 
+                background-color: $outline 
+            &:nth-child(odd) 
+                background-color: $focus
+                color: $blue
+    
+    td,th
+        padding: .5rem .25rem  
+        text-align: center 
+        font-size: 1rem  
+
+    tr
+        th,td
+            width:4rem
+            word-break: break-all
+
+
+
+
+
 .org
     width: 80%
     margin: auto
@@ -184,6 +229,7 @@ button:hover
         border-radius: 25px
         font-size: 1.25rem
         border: 3px solid $outline
+
 
 
 

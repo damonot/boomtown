@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import Members from "./Members"
+import Repos from "./Repos"
 import verified from '../static/verified.png'
 import unverified from '../static/unverified.png'
 import moment from 'moment'
@@ -78,6 +79,7 @@ const GitAPI = ({props}) => {
                     </div>
                 </section>
                 {/* <Members props={URL}/> */}
+                <Repos/>
             </div>
 
         )
