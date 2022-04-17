@@ -14,7 +14,7 @@ const Issues = ({props}) => {
         fetch(URL)
         .then(res => res.json())
         .then(json => {
-            if(json !== undefined && json.hasOwnProperty('id')) {
+            if(json !== undefined && json[0].hasOwnProperty('id')) {
                 setValidity(true);
                 handleData(json);
             } else setValidity(false);
