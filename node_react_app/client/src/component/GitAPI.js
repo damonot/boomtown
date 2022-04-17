@@ -86,7 +86,7 @@ const GitAPI = ({props}) => {
     } else {
         return(
             <div>
-                <h1>We couldn't find that org :/</h1>
+                <h2>We couldn't find that org :/</h2>
                 <h4>(note: you may have reached the Github API request limit)</h4>
             </div>
         )

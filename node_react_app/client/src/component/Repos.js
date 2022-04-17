@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import moment from "moment";
-import repos from "../development/repos"
 
 const Repos = ({props}) => {
     const [data, setData] = useState([])
