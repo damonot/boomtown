@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react"
 import Members from "./Members"
 import Repos from "./Repos"
+import Events from "./Events"
+import Hooks from "./Hooks"
+import Issues from "./Issues"
 import verified from '../static/verified.png'
 import unverified from '../static/unverified.png'
 import moment from 'moment'
@@ -20,17 +23,17 @@ const GitAPI = ({props}) => {
     const URL = API+props;
 
     useEffect(() => {
-        console.log("Requested "+ props )
-        fetch(URL)
-            .then(res => res.json())
-            .then(data => {
-                if(data.hasOwnProperty('id')) {
-                    setValidity(true)
-                    setData(data)
-                } else setValidity(false)
-            }).catch(err => {
-                console.log(err);
-            });
+            console.log("URL "+ URL +"Valid? Requesting "+ props )
+            fetch(URL)
+                .then(res => res.json())
+                .then(data => {
+                    if(data.hasOwnProperty('id')) {
+                        setData(data);
+                    }
+                }).catch(err => {
+                    console.log(err);
+                    setValidity(false);
+                });
     });
 
     const setData = ({
@@ -48,10 +51,11 @@ const GitAPI = ({props}) => {
         setIs_verified(is_verified);
         setCreated_at(created_at);
         setUpdated_at(updated_at);
+        setValidity(true);
     }
 
-
-    if(valid) {
+    // console.log(URL + "\tValid: " + valid + "\tProps:" + props);
+    if(valid && props !== '') {
         return(
             <div>
                 <section className="container org">
@@ -78,17 +82,27 @@ const GitAPI = ({props}) => {
                         }
                     </div>
                 </section>
-                {/* <Members props={URL}/> */}
                 <Repos props={URL}/>
+                    <Events props={URL}/>
+                <div className="flex wrap">
+                    <Hooks props={URL}/>
+                    <Issues props={URL}/>
+                </div>
+                <Members props={URL}/>
+
             </div>
 
         )
-    } else {
+    } else if(!valid && props !== '') { // bad non-empty input
         return(
             <div>
                 <h2>We couldn't find that org :/</h2>
                 <h4>(note: you may have reached the Github API request limit)</h4>
             </div>
+        )
+    } else { // no input i.e. default state
+        return(
+            <></>
         )
     }
 
