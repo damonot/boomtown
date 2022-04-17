@@ -8,7 +8,6 @@ const Hooks = ({props}) => {
     const URL = props+"/hooks"
     let friendlyCreate;
     let friendlyUpdate;
-    let friendlyPush;
 
     useEffect(() => {
         fetch(URL)
@@ -49,7 +48,6 @@ const Hooks = ({props}) => {
                                 data.map(i => {
                                     friendlyCreate = moment(i.created_at).fromNow();
                                     friendlyUpdate = moment(i.updated_at).fromNow();
-                                    friendlyPush = moment(i.pushed_at).fromNow();
                                     return (
                                         <tr key={i.id}>
                                             <td data-label="ID">{i.id}</td>

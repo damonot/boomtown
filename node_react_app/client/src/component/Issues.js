@@ -1,14 +1,10 @@
 import React, { useEffect, useState } from "react";
-import moment from "moment";
 import issues from "../development/issues";
 
 const Issues = ({props}) => {
     const [data, setData] = useState([])
     const [valid, setValidity] = useState(true)
     const URL = props+"/issues"
-    let friendlyCreate;
-    let friendlyUpdate;
-    let friendlyPush;
 
     useEffect(() => {
         fetch(URL)
