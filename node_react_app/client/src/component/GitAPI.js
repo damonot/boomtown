@@ -58,6 +58,7 @@ const GitAPI = ({props}) => {
     if(valid && props !== '') {
         return(
             <div>
+                {/* Organization Info */}
                 <section className="container org">
                     <div className="flex align highlight mx">
                         <a href={html_url}><img src={avatar_url} alt="No Image Found"></img></a>
@@ -89,18 +90,17 @@ const GitAPI = ({props}) => {
                     <Issues props={URL}/>
                 </div>
                 <Members props={URL}/>
-
             </div>
 
         )
-    } else if(!valid && props !== '') { // bad non-empty input
+    } else if(!valid && props !== '') { // Bad non-empty input
         return(
             <div>
                 <h2>We couldn't find that org :/</h2>
                 <h4>(note: you may have reached the Github API request limit)</h4>
             </div>
         )
-    } else { // no input i.e. default state
+    } else { // No input i.e. default state
         return(
             <></>
         )

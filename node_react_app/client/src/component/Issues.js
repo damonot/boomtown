@@ -29,37 +29,31 @@ const Issues = ({props}) => {
                     <h3 className="stretch">Issues</h3>
                     <div className="scrollable-wrapper">
                     <table className="table">
-                        <thead>
-                            <tr>
-                            <th>ID</th>
-                            <th>User</th>
-                            <th>Number</th>
-                            <th>State</th>
-                            <th>Title</th>
-                            <th>Body</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {
-                                data.map(i => {
-                                    return (
-                                        <tr key={i.id}>
-                                            <td data-label="ID">{i.id}</td>
-                                            <td data-label="User"> <a href={i.user.url}> <img src={i.avatar_url}alt={i.user.login}></img> </a></td>
-                                            <td data-label="Number"><a href={i.url}>{i.number}</a></td>
-                                            <td data-label="State">{i.state}</td>
-                                            <td data-label="Title">{i.title}</td>
-                                            <td data-label="Body">{i.body}</td>
-                                        </tr>
-                                    )
-                                })
-                            }
-                        </tbody>
+                    <thead>
+                        <tr>
+                        <th>ID</th>
+                        <th>User</th>
+                        <th>Number</th>
+                        <th>State</th>
+                        <th>Title</th>
+                        <th>Body</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {data.map(i => { return (
+                        <tr key={i.id}>
+                            <td data-label="ID">{i.id}</td>
+                            <td data-label="User"> <a href={i.user.url}> <img src={i.avatar_url}alt={i.user.login}></img> </a></td>
+                            <td data-label="Number"><a href={i.url}>{i.number}</a></td>
+                            <td data-label="State">{i.state}</td>
+                            <td data-label="Title">{i.title}</td>
+                            <td data-label="Body">{i.body}</td>
+                        </tr>)})}
+                    </tbody>
                     </table>
                     </div>
                 </div>
             </div>
-            
         )
     } else {
         return (

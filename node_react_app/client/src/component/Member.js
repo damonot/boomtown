@@ -7,14 +7,13 @@ const Member = ({props}) => {
             <h4>#{props.id}</h4>
             <div className="flex">
                 {props.site_admin ?
-                    <div className="bubble safe">Admin</div>
-                    : <div className="danger bubble">Non-Admin</div>
-                }
+                <div className="bubble safe">Admin</div>
+                :
+                <div className="danger bubble">Non-Admin</div>}
                 <div className="bubble blue">{props.type}</div>
             </div>
             <div id="item-5"><a href={props.html_url}>Visit Me!</a></div>
         </div>
-        
     )
 }
 

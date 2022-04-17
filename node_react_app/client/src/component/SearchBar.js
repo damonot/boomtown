@@ -11,8 +11,8 @@ const SearchBar = ({registerInput}) => {
     // update textInput on change, return prop to parent on click
     return(
         <div className="container search flex align">
-                <input onChange={handleChange} placeholder='Try "boomtownroi"'></input>
-                <button onClick={() => registerInput(textInput)}><img alt="Search" src={Search}></img></button>
+          <input onChange={handleChange} placeholder='Try "boomtownroi"'></input>
+          <button onClick={() => registerInput(textInput)}><img alt="Search" src={Search}></img></button>
         </div>
     )
 }

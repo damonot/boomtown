@@ -27,39 +27,33 @@ const Events = ({props}) => {
     if(valid) {
         return(
             <div className="shrink" id="events">
-                {/* <h2 className=" allcaps"style={{textAlign:"center"}}>repos</h2> */}
                 <div className="mx flex wrap box">
                     <h3 className="stretch">Events</h3>
                     <div className="scrollable-wrapper">
                     <table className="table">
-                        <thead>
-                            <tr>
-                            <th>ID</th>
-                            <th>Name</th>
-                            <th>Type</th>
-                            <th>Made</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {
-                                data.map(i => {
-                                    friendlyCreate = moment(i.created_at).fromNow();
-                                    return (
-                                        <tr key={i.id}>
-                                            <td data-label="ID">{i.id}</td>
-                                            <td data-label="Name"> <a href={i.repo.url}>{i.repo.name}</a></td>
-                                            <td data-label="Type">{i.type}</td>
-                                            <td data-label="Made">{friendlyCreate}</td>
-                                        </tr>
-                                    )
-                                })
-                            }
-                        </tbody>
+                    <thead>
+                        <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Made</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {data.map(i => {
+                        friendlyCreate = moment(i.created_at).fromNow();
+                        return (
+                        <tr key={i.id}>
+                            <td data-label="ID">{i.id}</td>
+                            <td data-label="Name"> <a href={i.repo.url}>{i.repo.name}</a></td>
+                            <td data-label="Type">{i.type}</td>
+                            <td data-label="Made">{friendlyCreate}</td>
+                        </tr>)})}
+                    </tbody>
                     </table>
                     </div>
                 </div>
             </div>
-            
         )
     } else {
         return (

@@ -21,18 +21,11 @@ const Members = ({props}) => {
 
     return(
         <div className="members" id="members">
-            {/* <h2 className="highlight allcaps"style={{textAlign:"center"}}>Members</h2> */}
             <div className="mx flex wrap">
-            {
-                data.map(i => {
-                    return (
-                        <Member props={i} key={i.id}/>
-                    )
-                })
-            }
+                {data.map(i => { return (
+                <Member props={i} key={i.id}/>)})}
             </div>
         </div>
-        
     )
 }
 
