@@ -66,6 +66,7 @@ const Repos = ({props}) => {
             <div className="box mx fitcontent">
                 <h3>Repositorites</h3>
                 <p>none found :(</p>
+                <h4>(you may have reached the request limit)</h4>
             </div>
         )
     }

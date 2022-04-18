@@ -63,6 +63,7 @@ const Hooks = ({props}) => {
             <div className="box mx fitcontent">
                 <h3>Hooks</h3>
                 <p>none found :(</p>
+                <h4>(you may have reached the request limit)</h4>
             </div>
         )
     }
