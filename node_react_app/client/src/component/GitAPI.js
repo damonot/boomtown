@@ -90,6 +90,7 @@ const GitAPI = ({props}) => {
                     <Issues props={URL}/>
                 </div>
                 <Members props={URL}/>
+                {/* members was throwing the error: isolate to see if it's the cause */}
             </div>
 
         )
