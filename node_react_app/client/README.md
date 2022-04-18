@@ -1,7 +1,7 @@
 # Damon Otero ReadMe Documentation (damongotero@gmail.com)
 
 ### Solution
-Implemented in React. The app takes an input from the user and on valid input, generates 4 scrollable tables and a profile cards for each member. By default, the page requests 'boomtownroi' but any valid org can be used as an endpoint. The app is mobile-responsive down to a width of 300px. The external dependencies used are: 'SASS' for CSS conversion and 'Moment' for formatting dates. The builtin dependencies were for 'useEffect' and 'useState'
+Implemented in React/NodeJS. The app takes an input from the user and on valid input, generates 4 scrollable tables and a profile cards for each member. By default, the page requests 'boomtownroi' but any valid org can be used as an endpoint. The app is mobile-responsive down to a width of 300px. The external dependencies used are: 'SASS' for CSS conversion and 'Moment' for formatting dates. The builtin dependencies were for 'useEffect' and 'useState'
     # Input Handling
         Input is processed by the SearchBar component. SearchBar updates an input variable on keypress and on button click returns the input to its parent GitAPI via prop.
         At the GitAPI level, the prop is appended to the base URL 'api.github.com/orgs' and performs a fetch request. If the response contains an 'id' field in the JSON then the data is accepted. Otherwise, the response is considered 'invalid' and the corresponding 'none found' messages are relayed to the user.
@@ -28,7 +28,10 @@ Implemented in React. The app takes an input from the user and on valid input, g
 ### Future Improvements
     Abstracting a function for useState and fetch would improve the portability of the program as many components call fetch from within useEffect. It's worth considering creating a base class for the components to inherit from as well; all components have an 'ID' field and many contain 'updated_at', 'created_at', and some kind of url and name. 
 
-
+### Extras
+    NodeJS 16.14.2
+    SASS and Moment required
+    Starting from boomtown dir, 1. cd node_react_app/client 2. npm start 
 
 # --------------------------------------
 
